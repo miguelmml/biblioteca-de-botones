@@ -1,0 +1,468 @@
+/* RESET de las reglas por defecto */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}nav ul{list-style-type:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}img{display:block}a{text-decoration:none}
+/* **ESTO NO SE EXPORTA** son las reglas para presentacion en la biblioteca */
+html{font-size:100%}body{padding:8%;background-color:#234}.wrapperFlexBox{width:65%;margin:0 auto;display:flex;justify-content:space-around;flex-wrap:wrap;align-content:center}.wrapperFlexBox button{margin-bottom:100px}.wrapperFlexBox button+button{margin-left:60px}
+
+
+
+
+/* Reglas generales para todos los botones de la biblioteca
+-Hay que exportarlo siempre junto con las reglas del boton especifico 
+-Siempre debe ir mas arriba en la cascada que las reglas particulares de cada boton */
+.botonesMiguel {
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  font-family: Arial, Helvetica, sans-serif;  
+  font-size: 65px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
+}
+*::after,::before{
+  pointer-events: none;
+  position: absolute;
+}
+
+/********************************************************* BOTON ENTER -1- *********************************************************/
+.boton1{
+  font-size: 3.5rem;
+  color: dodgerblue;
+}
+.boton1::before{
+  content: "";
+  display: block;
+  height: .1em;
+  width: 100%;
+  background-color: white;
+  top: -.75em;
+  opacity: 0;
+  transition: all .3s ease ;
+}
+.boton1::after{
+  content: "";
+  display: block;
+  height: .1em;
+  width: 100%;
+  background-color: white;
+  bottom: -.75em;
+  opacity: 0;
+  transition: all .3s ease ;
+}
+.boton1:hover::before{
+  top: -.1em;
+  opacity: 1;
+}
+.boton1:hover::after{
+  bottom: -.1em;
+  opacity: 1;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^*********************************************************/
+
+/********************************************************* BOTON ENTER -2- *********************************************************/
+.boton2{
+  font-size: 3.5rem;
+  color: dodgerblue;
+}
+.boton2::before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-right: .4em solid white;
+  border-top: .3em solid transparent;
+  border-bottom: .3em solid transparent;
+  right: -2em;
+  top: 16%;
+  opacity: 0;
+  transition: all .3s ease;
+}
+.boton2::after{
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: .4em solid white;
+  border-top: .3em solid transparent;
+  border-bottom: .3em solid transparent;
+  top: 16%;   
+  left: -2em;
+  opacity: 0;
+  transition: all .3s ease ;
+}
+.boton2:hover::before{
+  right: -.5em;
+  opacity: 1;
+}
+.boton2:hover::after{
+  left: -.5em;
+  opacity: 1;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^*********************************************************/
+
+
+/********************************************************** BOTON ENTER -3- **********************************************************/
+.boton3{
+  font-size: 3.5rem;
+  color: dodgerblue;
+}
+.boton3::before{
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: .1em solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-.12em,-.12em);
+  transition: all .4s ease;
+  opacity: 0;
+  z-index: -1;
+}
+.boton3:hover{
+  color:fuchsia;
+  transition: color 1s ease ;
+}
+.boton3:hover::before{
+  width: 102%;
+  height: 1em;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^*********************************************************/
+
+
+/********************************************************** BOTON ENTER -4- **********************************************************/
+.boton4{
+  font-size: 3rem;
+  color: white;
+  background-color: #2f90ff;
+  height: 2.5em;
+  line-height: 2.5em;
+  top: 0;
+  transition: all .3s ease;
+  border-radius: 100%;
+  box-sizing: border-box;
+  padding: 0 .5em;
+  box-shadow: 
+              0 .03em 0 skyblue,
+              0 .15em 0 #005896,
+              0 .20em 0 #005896,
+              0 .25em 0 #005896,
+              0 .30em 0 #005896,
+              0 .35em 0 #005896,
+              0 .40em 0 #005896,
+              0 .45em 0 #005896,
+              0 .50em 0 #005896,
+              0 .55em 0 #005896,
+              0 .60em 0 #005896,
+              0 .65em 0 #005896,
+              0 .70em 0 #005896;
+              
+}
+.boton4::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.5em;
+  border-radius: 100%;
+  top: .7em;
+  left: 0;
+  background-color: #005896;
+  visibility: hidden;
+  z-index: -1;
+  transition: all .3s ease;
+}
+.boton4:hover{
+  color: #fff;
+  top: -.18em;
+  background-color: #2fccff;
+  box-shadow: 0 .03em 0 skyblue,
+              0 .15em 0 #0077ff,
+              0 .20em 0 #0077ff,
+              0 .25em 0 #0077ff,
+              0 .30em 0 #0077ff,
+              0 .35em 0 #0077ff,
+              0 .40em 0 #0077ff,
+              0 .45em 0 #0077ff,
+              0 .50em 0 #0077ff,
+              0 .55em 0 #0077ff,
+              0 .60em 0 #0077ff,
+              0 .65em 0 #0077ff,
+              0 .70em 0 #0077ff;
+}
+.boton4:hover::after{
+  top: .88em;
+  background-color: #0077ff;
+  visibility: visible;
+}
+.boton4:active{
+  color:rgb(199, 184, 184);
+  transition: color 0s;
+  background-color: #3a94b3;
+  top: -.12em;
+}
+.boton4:active::after{
+  top: .83em;
+  transition: top 0s;
+  visibility: visible;
+}
+.boton4>span{
+  display: block;
+ transform: perspective(500px) rotateX(35deg);
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^*********************************************************/
+
+
+/********************************************************** BOTON LIGHT -5- **********************************************************/
+.boton5{
+  font-size: 2rem;
+  background-image: radial-gradient(circle,rgba(198,197,203,1)0%,rgba(255,252,0,1) 0%,rgba(237,240,241,1)100%);
+  background-size: 160%;
+  background-position: center;
+  color: red;
+  line-height: 2.45em;
+  border-radius: 6px ;
+  box-shadow: 0 0 50px white;
+  position: relative;
+  top: 0;
+  padding: 0 2.4em;
+}
+.boton5::after{
+  content: "";
+  display: block;
+  background-color: orangered;
+  width: 100%;
+  height: 2.45em;
+  z-index: -1;
+  border-radius: 6px;
+  top: .4em;
+  left: 0;
+}
+.boton5:active{
+  background: radial-gradient(circle,rgba(97,95,108,1)0%,rgba(18,18,15,1)0%,rgba(98,110,115,1)40%);
+  color: indianred;
+  box-shadow: inset 0 0 20px black;
+  top: .25em;
+}
+.boton5:active::after{
+  background-color: #883300;  
+  top: .15em;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^*********************************************************/
+
+
+/********************************************************** BOTON READ MORE -6- **********************************************************/
+.boton6{
+  font-size: 2rem;
+  background-color: white;
+  color: #223344;
+  text-align: center;
+  line-height: 2.5em;
+  border-radius: 2px;
+  padding: 0 1.5em;
+}
+.boton6:hover{
+  top: 4px;
+  left: -8px;
+}
+.boton6::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.5em;
+  border: 3px solid white;
+  top: 6px;
+  left: -14px;
+  border-radius: 2px;
+}
+.boton6:hover::after{
+  top: 2px;
+  left: -6px;
+}
+.boton6:active{
+  color: red;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^***********************************************************************/
+
+
+/********************************************************** BOTON CIRCULAR READ-MORE -7- **********************************************************/
+.boton7{
+  font-size: 2rem;
+  background-color: white;
+  color: #223344;
+  width: 5em; 
+  height: 5em;
+  border-radius: 100%;
+  top: 0;
+  left: 0;
+}
+.boton7::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 3px solid white;
+  box-sizing: border-box;
+  top: 8px;
+  left: -10px ;
+  border-radius: 100%;
+}
+.boton7:hover{
+  top: 8px;
+  left: -9px;
+}
+.boton7:hover::after{
+  top: 0;
+  left: -1px;
+}
+.boton7:active{
+  color: crimson;
+}
+.boton7>span{
+  position:absolute;
+  top: 50%;
+  transform:translate(-50%, -50%);
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^********************************************************************/
+
+
+/********************************************************** BOTONES GHOST PRIMARY -8- **********************************************************/
+.boton8{
+  font-size: 1.8rem;
+  box-sizing: border-box;
+  background-color: coral;
+  color: #223344;
+  min-width: 10em;
+  padding: 1em;
+  border-radius: 50px;
+}
+.boton8:hover{
+  background-color: rgb(246, 158, 125);
+}
+.boton8:active{
+  background-color:coral;
+}
+/*********************************************************^^^^^^^^^^^^^^^^^^**********************************************************************/
+
+
+/********************************************************** BOTONES GHOST SECONDARY -9- **********************************************************/
+.boton9{
+  font-size: 1.8rem;
+  box-sizing: border-box;
+  color:coral;
+  border:2px solid coral;
+  min-width: 10em;
+  padding: 1em;
+  border-radius: 50px;
+}
+.boton9:hover{
+  background-color: rgba(255, 119, 70, .2);
+}
+.boton9:active{
+  background-color: transparent;
+}
+
+
+/***************************************************** BOTON ENORME !IMPORTANTE EXPORTAR TAMBIEN LA IMAGEN DEL BACKGROUND-IMAGE *****************************************************/
+.Elboton{
+  font-size: 1.3rem;
+  width: 15em;
+  height: 15em;
+  background-image: url("ui-img/banda.gif");/*  <= !!!EXPORTAR IMAGEN !!!   */
+  background-repeat:repeat;
+  background-size: 15em;
+  border-radius: 6px;
+  position:relative;
+  margin: 80px auto;/* Esta propiedad es solo para espaciar en la biblioteca*/
+}
+.Elboton::before{
+  content: "";
+  display: block;
+  width: 50%;
+  height: 80%;
+  background: linear-gradient(270deg, rgba(98,110,115,1) 17%, rgba(39,38,39,1) 100%);
+  top: 10%;
+  left: 0;
+  z-index: 2;
+  border: 2px solid black;
+  border-right: 4px double black;
+  transition: width 1s ease-out;
+  box-sizing: border-box;
+}
+.Elboton::after{
+  content: "";
+  display: block;
+  width: 50%;
+  height: 80%;
+  background: linear-gradient(90deg, rgba(98,110,115,1) 17%, rgba(39,38,39,1) 100%);
+  top: 10%;
+  right: 0;
+  z-index: 2;
+  border: 2px solid black;
+  border-left: 4px double black;
+  transition: width 1s ease-out;
+  box-sizing: border-box;
+}
+.Elboton:hover::before,
+.Elboton:hover::after{
+  width: 3.33%;
+}
+.Elboton a{
+  font-family: helvetica,sans-serif;
+  display: inline-block;
+  color: #bcbcbc;
+  background-color: #b32400;
+  height: 36.666%;
+  width: 36.666%;
+  border-radius: 100%;
+  text-align: center;
+  padding: 11.666% 6.666%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -20%;
+  margin-left: -18.333%;
+  z-index: 1;
+}
+.Elboton:hover a{
+  color: white;
+  background-color: red;
+  box-shadow: 0 0 40px red;
+  transition: all .1s .9s ease;
+}
+/*FONDO NEGRO DEL BOTON Y VOLUMEN DEL BOTON Y CAJA*/
+.fondo{
+  background-color: black;
+  width: 100%;
+  height: 80%;
+  position: relative;
+  top: 10%;
+}
+.fondo::before{
+  content: "";
+  display: block;
+  width: 36.666%;
+  height: 45%;
+  background-color: #770000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -16.666%;
+  margin-left: -18.333%;
+  border-radius: 100%;
+}
+.error{
+  width: 98.7vw;
+  margin: -60px -150px ;
+}
+/* FINAL */
